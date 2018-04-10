@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="jquery-3.1.0.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+          var textBoxes=  $('input[type="text"]');
+          textBoxes.focus(function () {
+              var helpDiv = $(this).attr('id') + 'HelpDiv';
+              $('#' + helpDiv).load('help.html #' + helpDiv);
+
+          });
+
+          textBoxes.blur(function () {
+              var helpDiv = $(this).attr('id') + 'HelpDiv';
+              $('#' + helpDiv).html('');
+
+          });
+
+        })
+
+
+    </script>
+	<meta charset="utf-8" />
+</head>
+<body style="font-family:Arial;">
+    <table>    
+        <tr>
+            <td>First Name</td>
+            <td><input type="text" id="firstName" /></td>
+            <td><div id="firstNameHelpDiv"></div></td>   
+        </tr>
+
+        <tr>
+            <td>Last Name</td>
+            <td><input type="text" id="lastName" /></td>
+            <td><div id="lastNameHelpDiv"></div></td>
+        </tr>
+        
+        <tr>
+            <td>Email</td>
+            <td><input type="text" id="email" /></td>
+            <td><div id="emailHelpDiv"></div></td>
+        </tr>
+
+        <tr>
+            <td>Income</td>
+            <td><input type="text" id="income"/></td>
+            <td><div id="incomeHelpDiv"></div></td>
+        </tr>
+
+    </table>
+
+</body>
+</html>
